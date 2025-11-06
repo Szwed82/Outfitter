@@ -283,12 +283,6 @@ local Outfitter_cClassSpecialOutfits =
 
 local	gOutfitter_SpellNameSpecialID =
 {
-	[Outfitter_cAspectOfTheCheetah] = "Cheetah",
-	[Outfitter_cAspectOfThePack] = "Pack",
-	[Outfitter_cAspectOfTheBeast] = "Beast",
-	[Outfitter_cAspectOfTheWild] = "Wild",
-	[Outfitter_cAspectOfTheBeast] = "Beast",
-	[Outfitter_cEvocate] = "Evocate",
 };
 
 local	gOutfitter_AuraIconSpecialID =
@@ -297,34 +291,15 @@ local	gOutfitter_AuraIconSpecialID =
 
 local Outfitter_cSpecialOutfitDescriptions =
 {
-	City = Outfitter_cCityOutfitDescription,
 };
 
--- Note that zone special outfits will be worn in the order
--- the are listed here, with later outfits being worn over
--- earlier outfits (when they're being applied at the same time)
--- This allows BG-specific outfits to take priority of the generic
--- BG outfit
 
 local Outfitter_cZoneSpecialIDs =
 {
-	"City",
-	"Instance",
 };
 
 local Outfitter_cZoneSpecialIDMap =
 {
-	[Outfitter_cIronforge] = {"City"},
-	[Outfitter_cCityOfIronforge] = {"City"},
-	[Outfitter_cDarnassus] = {"City"},
-	[Outfitter_cStormwind] = {"City"},
-	[Outfitter_cOrgrimmar] = {"City"},
-	[Outfitter_cThunderBluff] = {"City"},
-	[Outfitter_cUndercity] = {"City"},
-	[Outfitter_cAQ20] = {"Instance"},
-	[Outfitter_cAQ40] = {"Instance"},
-	[Outfitter_cZG] = {"Instance"},
-	[Outfitter_cES] = {"Instance"},
 };
 
 local gOutfitter_StatDistribution =
@@ -532,6 +507,11 @@ function Outfitter_OnLoad()
 	Outfitter_RegisterEvent(this, "PLAYER_DEAD", Outfitter_PlayerDead);
 	Outfitter_RegisterEvent(this, "PLAYER_ALIVE", Outfitter_PlayerAlive);
 	Outfitter_RegisterEvent(this, "PLAYER_UNGHOST", Outfitter_PlayerAlive);
+
+	-- For monitoring player combat state
+
+	Outfitter_RegisterEvent(this, "PLAYER_REGEN_ENABLED", Outfitter_RegenEnabled);
+	Outfitter_RegisterEvent(this, "PLAYER_REGEN_DISABLED", Outfitter_RegenDisabled);
 	
 	Outfitter_RegisterEvent(this, "UNIT_INVENTORY_CHANGED", Outfitter_InventoryChanged);
 
@@ -1076,9 +1056,6 @@ function OutfitterItemDropDown_Initialize()
 		
 		if vIsSpecialOutfit then
 			Outfitter_AddMenuItem(vFrame, Outfitter_cDisableOutfit, "DISABLE", vOutfit.Disabled);
-			Outfitter_AddMenuItem(vFrame, Outfitter_cDisableOutfitInBG, "BGDISABLE", vOutfit.BGDisabled);
-			--hax
-			Outfitter_AddMenuItem(vFrame, Outfitter_cDisableOutfitInInstance, "INSTDISABLE", vOutfit.InstDisabled);
 		else
 			Outfitter_AddMenuItem(vFrame, PET_RENAME, "RENAME");
 		end
@@ -1094,11 +1071,8 @@ function OutfitterItemDropDown_Initialize()
 		
 		Outfitter_AddSubmenuItem(vFrame, Outfitter_cKeyBinding, "BINDING");
 		
-		if not vIsSpecialOutfit then
-			Outfitter_AddMenuItem(vFrame, DELETE, "DELETE");
-		end
-
 		Outfitter_AddMenuItem(vFrame, Outfitter_cUpdateToCurrent, "UPDATE");
+		Outfitter_AddMenuItem(vFrame, DELETE, "DELETE");
 		
 		Outfitter_AddCategoryMenuItem(Outfitter_cBankCategoryTitle);
 		Outfitter_AddMenuItem(vFrame, Outfitter_cDepositToBank, "DEPOSIT", nil, nil, nil, not gOutfitter_BankFrameOpened);
@@ -4261,20 +4235,6 @@ function Outfitter_OutfitItemSelected(pMenu, pValue)
 			vOutfit.Disabled = nil;
 		else
 			vOutfit.Disabled = true;
-		end
-		gOutfitter_DisplayIsDirty = true;
-	elseif pValue == "BGDISABLE" then
-		if vOutfit.BGDisabled then
-			vOutfit.BGDisabled = nil;
-		else
-			vOutfit.BGDisabled = true;
-		end
-		gOutfitter_DisplayIsDirty = true;
-	elseif pValue == "INSTDISABLE" then
-		if vOutfit.InstDisabled then
-			vOutfit.InstDisabled = nil;
-		else
-			vOutfit.InstDisabled = true;
 		end
 		gOutfitter_DisplayIsDirty = true;
 	elseif pValue == "ACCESSORY" then
