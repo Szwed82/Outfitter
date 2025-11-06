@@ -170,31 +170,19 @@ local Outfitter_cSpecialtyBags =
 
 local Outfitter_cFishingPoles =
 {
+	{Code = 84507, SubCode = 0}, -- Outfitter_cBarkskinFisher
 	{Code = 19970, SubCode = 0}, -- Outfitter_cArcaniteFishingPole
 	{Code = 19022, SubCode = 0}, -- Outfitter_cNatPaglesFishingPole
-	{Code = 12224, SubCode = 0}, -- Outfitter_cBlumpFishingPole
+	{Code = 12225, SubCode = 0}, -- Outfitter_cBlumpFishingPole
 	{Code = 6367, SubCode = 0}, -- Outfitter_cBigIronFishingPole
+	{Code = 6366, SubCode = 0}, -- Outfitter_cDarkwoodFishingPole
 	{Code = 6365, SubCode = 0}, -- Outfitter_cStrongFishingPole
 	{Code = 6256, SubCode = 0}, -- Outfitter_cFishingPole
-};
-
-local Outfitter_cRidingItems =
-{
-	{Code = 11122, SubCode = 0}, -- Outfitter_cCarrotOnAStick
-};
-
-local Outfitter_cArgentDawnTrinkets = 
-{
-	{Code = 13209, SubCode = 0}, -- Outfitter_cSealOfTheDawn
-	{Code = 19812, SubCode = 0}, -- Outfitter_cRuneOfTheDawn
-	{Code = 12846, SubCode = 0}, -- Outfitter_cArgentDawnCommission
 };
 
 local Outfitter_cStatIDItems =
 {
 	Fishing = Outfitter_cFishingPoles,
-	Riding = Outfitter_cRidingItems,
-	ArgentDawn = Outfitter_cArgentDawnTrinkets,
 };
 
 local Outfitter_cIgnoredUnusedItems = 
@@ -291,51 +279,6 @@ local Outfitter_cNormalizedClassName =
 
 local Outfitter_cClassSpecialOutfits =
 {
-	Warrior =
-	{
-		{Name = Outfitter_cWarriorBattleStance, SpecialID = "Battle"},
-		{Name = Outfitter_cWarriorDefensiveStance, SpecialID = "Defensive"},
-		{Name = Outfitter_cWarriorBerserkerStance, SpecialID = "Berserker"},
-	},
-	
-	Druid =
-	{
-		{Name = Outfitter_cDruidBearForm, SpecialID = "Bear"},
-		{Name = Outfitter_cDruidCatForm, SpecialID = "Cat"},
-		{Name = Outfitter_cDruidAquaticForm, SpecialID = "Aquatic"},
-		{Name = Outfitter_cDruidTravelForm, SpecialID = "Travel"},
-		{Name = Outfitter_cDruidMoonkinForm, SpecialID = "Moonkin"},
-	},
-	
-	Priest =
-	{
-		{Name = Outfitter_cPriestShadowform, SpecialID = "Shadowform"},
-	},
-	
-	Rogue =
-	{
-		{Name = Outfitter_cRogueStealth, SpecialID = "Stealth"},
-	},
-	
-	Shaman =
-	{
-		{Name = Outfitter_cShamanGhostWolf, SpecialID = "GhostWolf"},
-	},
-	
-	Hunter =
-	{
-		{Name = Outfitter_cHunterMonkey, SpecialID = "Monkey"},
-		{Name = Outfitter_cHunterHawk, SpecialID = "Hawk"},
-		{Name = Outfitter_cHunterCheetah, SpecialID = "Cheetah"},
-		{Name = Outfitter_cHunterPack, SpecialID = "Pack"},
-		{Name = Outfitter_cHunterBeast, SpecialID = "Beast"},
-		{Name = Outfitter_cHunterWild, SpecialID = "Wild"},
-	},
-	
-	Mage =
-	{
-		{Name = Outfitter_cMageEvocate, SpecialID = "Evocate"},
-	},
 };
 
 local	gOutfitter_SpellNameSpecialID =
@@ -344,28 +287,16 @@ local	gOutfitter_SpellNameSpecialID =
 	[Outfitter_cAspectOfThePack] = "Pack",
 	[Outfitter_cAspectOfTheBeast] = "Beast",
 	[Outfitter_cAspectOfTheWild] = "Wild",
+	[Outfitter_cAspectOfTheBeast] = "Beast",
 	[Outfitter_cEvocate] = "Evocate",
 };
 
 local	gOutfitter_AuraIconSpecialID =
 {
-	["INV_Misc_Fork&Knife"] = "Dining",
-	["Spell_Shadow_Shadowform"] = "Shadowform",
-	["Spell_Nature_SpiritWolf"] = "GhostWolf",
-	["Ability_Rogue_FeignDeath"] = "Feigning",
-	["Ability_Hunter_AspectOfTheMonkey"] = "Monkey",
-	["Spell_Nature_RavenForm"] = "Hawk",
 };
 
 local Outfitter_cSpecialOutfitDescriptions =
 {
-	ArgentDawn = Outfitter_cArgentDawnOutfitDescription,
-	Riding = Outfitter_cRidingOutfitDescription,
-	Dining = Outfitter_cDiningOutfitDescription,
-	Battleground = Outfitter_cBattlegroundOutfitDescription,
-	AB = Outfitter_cArathiBasinOutfitDescription,
-	AV = Outfitter_cAlteracValleyOutfitDescription,
-	WSG = Outfitter_cWarsongGulchOutfitDescription,
 	City = Outfitter_cCityOutfitDescription,
 };
 
@@ -377,25 +308,12 @@ local Outfitter_cSpecialOutfitDescriptions =
 
 local Outfitter_cZoneSpecialIDs =
 {
-	"ArgentDawn",
 	"City",
-	"Battleground",
-	"AV",
-	"AB",
-	"WSG",
 	"Instance",
 };
 
 local Outfitter_cZoneSpecialIDMap =
 {
-	[Outfitter_cWesternPlaguelands] = {"ArgentDawn"},
-	[Outfitter_cEasternPlaguelands] = {"ArgentDawn"},
-	[Outfitter_cStratholme] = {"ArgentDawn"},
-	[Outfitter_cScholomance] = {"ArgentDawn"},
-	[Outfitter_cNaxxramas] = {"ArgentDawn"},
-	[Outfitter_cAlteracValley] = {"Battleground", "AV"},
-	[Outfitter_cArathiBasin] = {"Battleground", "AB"},
-	[Outfitter_cWarsongGulch] = {"Battleground", "WSG"},
 	[Outfitter_cIronforge] = {"City"},
 	[Outfitter_cCityOfIronforge] = {"City"},
 	[Outfitter_cDarnassus] = {"City"},
@@ -406,6 +324,7 @@ local Outfitter_cZoneSpecialIDMap =
 	[Outfitter_cAQ20] = {"Instance"},
 	[Outfitter_cAQ40] = {"Instance"},
 	[Outfitter_cZG] = {"Instance"},
+	[Outfitter_cES] = {"Instance"},
 };
 
 local gOutfitter_StatDistribution =
@@ -569,6 +488,17 @@ StaticPopupDialogs["OUTFITTER_CONFIRM_DELETE"] =
 	hideOnEscape = 1
 };
 
+StaticPopupDialogs["OUTFITTER_CONFIRM_UPDATE"] =
+{
+	text = TEXT(Outfitter_cConfirmUpdateMsg),
+	button1 = TEXT(Outfitter_cUpdate),
+	button2 = TEXT(CANCEL),
+	OnAccept = function() Outfitter_UpdateSelectedOutfit(); end,
+	timeout = 0,
+	whileDead = 1,
+	hideOnEscape = 1
+};
+
 StaticPopupDialogs["OUTFITTER_CONFIRM_REBUILD"] =
 {
 	text = TEXT(Outfitter_cConfirmRebuildMsg),
@@ -597,19 +527,6 @@ function Outfitter_OnLoad()
 	Outfitter_RegisterEvent(this, "PLAYER_LEAVING_WORLD", Outfitter_PlayerLeavingWorld);
 	Outfitter_RegisterEvent(this, "VARIABLES_LOADED", Outfitter_VariablesLoaded);
 	
-	-- For monitoring mounted, dining and shadowform states
-	
-	Outfitter_RegisterEvent(this, "PLAYER_AURAS_CHANGED", Outfitter_UpdateAuraStates);
-	
-	-- For monitoring plaguelands and battlegrounds
-	
-	Outfitter_RegisterEvent(this, "ZONE_CHANGED_NEW_AREA", Outfitter_UpdateZone);
-	
-	-- For monitoring player combat state
-	
-	Outfitter_RegisterEvent(this, "PLAYER_REGEN_ENABLED", Outfitter_RegenEnabled);
-	Outfitter_RegisterEvent(this, "PLAYER_REGEN_DISABLED", Outfitter_RegenDisabled);
-	
 	-- For monitoring player dead/alive stat
 	
 	Outfitter_RegisterEvent(this, "PLAYER_DEAD", Outfitter_PlayerDead);
@@ -617,7 +534,7 @@ function Outfitter_OnLoad()
 	Outfitter_RegisterEvent(this, "PLAYER_UNGHOST", Outfitter_PlayerAlive);
 	
 	Outfitter_RegisterEvent(this, "UNIT_INVENTORY_CHANGED", Outfitter_InventoryChanged);
-	
+
 	-- For indicating which outfits are missing items
 	
 	Outfitter_RegisterEvent(this, "BAG_UPDATE", Outfitter_BagUpdate);
@@ -627,14 +544,6 @@ function Outfitter_OnLoad()
 	
 	Outfitter_RegisterEvent(this, "BANKFRAME_OPENED", Outfitter_BankFrameOpened);
 	Outfitter_RegisterEvent(this, "BANKFRAME_CLOSED", Outfitter_BankFrameClosed);
-	
-	-- For unequipping the dining outfit
-	
-	Outfitter_RegisterEvent(this, "UNIT_HEALTH", Outfitter_UnitHealthOrManaChanged);
-	Outfitter_RegisterEvent(this, "UNIT_MANA", Outfitter_UnitHealthOrManaChanged);
-	
-	Outfitter_SuspendEvent(this, "UNIT_HEALTH"); -- Don't actually care until the dining outfit equips
-	Outfitter_SuspendEvent(this, "UNIT_MANA");
 	
 	-- Tabs
 	
@@ -696,8 +605,6 @@ function Outfitter_PlayerLeavingWorld()
 	Outfitter_SuspendEvent(OutfitterFrame, "BAG_UPDATE");
 	Outfitter_SuspendEvent(OutfitterFrame, "UNIT_INVENTORY_CHANGED");
 	Outfitter_SuspendEvent(OutfitterFrame, "UPDATE_INVENTORY_ALERTS");
-	Outfitter_SuspendEvent(OutfitterFrame, "SPELLS_CHANGED");
-	Outfitter_SuspendEvent(OutfitterFrame, "PLAYER_AURAS_CHANGED");
 	Outfitter_SuspendEvent(OutfitterFrame, "PLAYERBANKSLOTS_CHANGED");
 end
 
@@ -705,9 +612,6 @@ function Outfitter_PlayerEnteringWorld()
 	OutfitterItemList_FlushEquippableItems();
 	
 	Outfitter_RegenEnabled();
-	Outfitter_UpdateAuraStates();
-	Outfitter_SetSpecialOutfitEnabled("Riding", false);
-	
 	Outfitter_ResumeLoadScreenEvents();
 end
 
@@ -721,8 +625,6 @@ function Outfitter_ResumeLoadScreenEvents()
 		Outfitter_ResumeEvent(OutfitterFrame, "BAG_UPDATE");
 		Outfitter_ResumeEvent(OutfitterFrame, "UNIT_INVENTORY_CHANGED");
 		Outfitter_ResumeEvent(OutfitterFrame, "UPDATE_INVENTORY_ALERTS");
-		Outfitter_ResumeEvent(OutfitterFrame, "SPELLS_CHANGED");
-		Outfitter_ResumeEvent(OutfitterFrame, "PLAYER_AURAS_CHANGED");
 		Outfitter_ResumeEvent(OutfitterFrame, "PLAYERBANKSLOTS_CHANGED");
 		
 		Outfitter_InventoryChanged2();
@@ -871,36 +773,6 @@ end
 function Outfitter_PlayerAlive(pEvent)
 	if not UnitIsDeadOrGhost("player") then
 		gOutfitter_IsDead = false;
-	end
-end
-
-function Outfitter_UnitHealthOrManaChanged()
-	if arg1 ~= "player" then
-		return;
-	end
-	
-	local	vHealth = UnitHealth("player");
-	local	vMaxHealth = UnitHealthMax("player");
-	local	vFullHealth = false;
-	local	vFullMana = false;
-	
-	if vHealth > (vMaxHealth * 0.99) then
-		vFullHealth = true;
-	end
-	
-	if UnitPowerType("player") == 0 then
-		local	vMana = UnitMana("player");
-		local	vMaxMana = UnitManaMax("player");
-		
-		if vMana > (vMaxMana * 0.99) then
-			vFullMana = true;
-		end
-	else
-		vFullMana = true;
-	end
-	
-	if vFullHealth and vFullMana then
-		Outfitter_SetSpecialOutfitEnabled("Dining", false);
 	end
 end
 
@@ -1097,6 +969,21 @@ function Outfitter_DeleteSelectedOutfit()
 	Outfitter_Update(true);
 end
 
+function Outfitter_AskUpdateOutfit(pOutfit)
+	gOutfitter_OutfitToUpdate = pOutfit;
+	StaticPopup_Show("OUTFITTER_CONFIRM_UPDATE", gOutfitter_OutfitToUpdate.Name);
+end
+
+function Outfitter_UpdateSelectedOutfit()
+	if not gOutfitter_OutfitToUpdate then
+		return;
+	end
+
+	Outfitter_UpdateOutfit(gOutfitter_OutfitToUpdate);
+
+	Outfitter_Update(true);
+end
+
 function Outfitter_ShowPanel(pPanelIndex)
 	Outfitter_CancelDialogs(); -- Force any dialogs to close if they're open
 	
@@ -1210,6 +1097,8 @@ function OutfitterItemDropDown_Initialize()
 		if not vIsSpecialOutfit then
 			Outfitter_AddMenuItem(vFrame, DELETE, "DELETE");
 		end
+
+		Outfitter_AddMenuItem(vFrame, Outfitter_cUpdateToCurrent, "UPDATE");
 		
 		Outfitter_AddCategoryMenuItem(Outfitter_cBankCategoryTitle);
 		Outfitter_AddMenuItem(vFrame, Outfitter_cDepositToBank, "DEPOSIT", nil, nil, nil, not gOutfitter_BankFrameOpened);
@@ -2412,15 +2301,6 @@ function Outfitter_RemoveOutfit(pOutfit)
 	if not OutfitterStack_RemoveOutfit(pOutfit) then
 		return;
 	end
-	
-	-- Stop monitoring health and mana if it's the dining outfit
-	
-	if pOutfit.SpecialID == "Dining" then
-		Outfitter_SuspendEvent(OutfitterFrame, "UNIT_HEALTH");
-		Outfitter_SuspendEvent(OutfitterFrame, "UNIT_MANA");
-	end
-	
-	--
 	
 	Outfitter_BeginEquipmentUpdate();
 	
@@ -3713,83 +3593,6 @@ function Outfitter_SetSlotEnable(pSlotName, pEnable)
 	gOutfitter_DisplayIsDirty = true;
 end
 
-function Outfitter_GetSpecialOutfit(pSpecialID)
-	for vOutfitIndex, vOutfit in gOutfitter_Settings.Outfits.Special do
-		if vOutfit.SpecialID == pSpecialID then
-			return vOutfit;
-		end
-	end
-	
-	return nil;
-end
-
-function Outfitter_GetPlayerAuraStates()
-	local		vAuraStates =
-	{
-		Dining = false,
-		Shadowform = false,
-		Riding = false,
-		GhostWolf = false,
-		Feigning = false,
-		Evocate = false,
-		Monkey = false,
-		Hawk = false,
-		Cheetah = false,
-		Pack = false,
-		Beast = false,
-		Wild = false
-	};
-	
-	local		vBuffIndex = 1;
-	
-	while true do
-		vTexture = UnitBuff("player", vBuffIndex);
-		
-		if not vTexture then
-			return vAuraStates;
-		end
-		
-		local	vStartIndex, vEndIndex, vTextureName = string.find(vTexture, "([^%\\]*)$");
-		
-		--
-		
-		local	vSpecialID = gOutfitter_AuraIconSpecialID[vTextureName];
-		
-		if vSpecialID then
-			vAuraStates[vSpecialID] = true;
-		
-		--
-		
-		elseif not vAuraStates.Dining
-		and string.find(vTextureName, "INV_Drink") then
-			vAuraStates.Dining = true;
-		
-		--
-		
-		else
-			local	vTextLine1, vTextLine2 = Outfitter_GetBuffTooltipText(vBuffIndex);
-			
-			if vTextLine1 then
-				local	vSpecialID = gOutfitter_SpellNameSpecialID[vTextLine1];
-				
-				if vSpecialID then
-					vAuraStates[vSpecialID] = true;
-				
-				elseif vTextLine2
-					and (
-						string.find(vTextLine2, Outfitter_cMountSpeedFormat) or --Mount fix by Red Mage Joe
-						string.find(vTextLine2, "Riding") or
-						string.find(vTextLine2, "Slow and steady...")
-					) then
-					vAuraStates.Riding = true;
-				end
-			end
-		end
-		
-		vBuffIndex = vBuffIndex + 1;
-	end
-end
-
 function Outfitter_GetBuffTooltipText(pBuffIndex)
 	OutfitterTooltip:SetOwner(OutfitterFrame, "ANCHOR_BOTTOMRIGHT", 0, 0);
 	OutfitterTooltip:SetUnitBuff("player", pBuffIndex);
@@ -3809,150 +3612,7 @@ function Outfitter_GetBuffTooltipText(pBuffIndex)
 	return vText1, vText2;
 end
 
-function Outfitter_UpdateAuraStates()
-	-- Check for special aura outfits
-	
-	local	vAuraStates = Outfitter_GetPlayerAuraStates();
-	
-	for vSpecialID, vIsActive in vAuraStates do
-		if vSpecialID == "Feigning" then
-			gOutfitter_IsFeigning = vIsActive;
-		else
-			if not gOutfitter_SpecialState[vSpecialID] then
-				gOutfitter_SpecialState[vSpecialID] = false;
-			end
-			
-			if gOutfitter_SpecialState[vSpecialID] ~= vIsActive then
-				gOutfitter_SpecialState[vSpecialID] = vIsActive;
-				Outfitter_SetSpecialOutfitEnabled(vSpecialID, vIsActive);
-			end
-		end
-	end
-	
-	-- As of 1.12 aura changes are the only way to detect shapeshifts, so update those too
-	
-	Outfitter_UpdateShapeshiftState();
-end
 
-function Outfitter_UpdateShapeshiftState()
-	local	vNumForms = GetNumShapeshiftForms();
-	
-	for vIndex = 1, vNumForms do
-		local	vTexture, vName, vIsActive, vIsCastable = GetShapeshiftFormInfo(vIndex);
-		local	vSpecialID = Outfitter_cShapeshiftSpecialIDs[vName];
-		
-		if vSpecialID then
-			if not vIsActive then
-				vIsActive = false;
-			end
-			
-			if gOutfitter_SpecialState[vSpecialID.ID] == nil then
-				gOutfitter_SpecialState[vSpecialID.ID] = Outfitter_WearingSpecialOutfit(vSpecialID.ID);
-			end
-			
-			if gOutfitter_SpecialState[vSpecialID.ID] ~= vIsActive then
-				gOutfitter_SpecialState[vSpecialID.ID] = vIsActive;
-				Outfitter_SetSpecialOutfitEnabled(vSpecialID.ID, vIsActive);
-			end
-		end
-	end
-end
-
-function Outfitter_SetSpecialOutfitEnabled(pSpecialID, pEnable)
-	local	vOutfit = Outfitter_GetSpecialOutfit(pSpecialID);
-
-	if not vOutfit
-	or vOutfit.Disabled
-	or (pEnable and vOutfit.BGDisabled and Outfitter_InBattlegroundZone())
-	or (pEnable and vOutfit.InstDisabled and Outfitter_InInstanceZone()) then
-		return;
-	end
-
-	if pEnable then
-		-- Start monitoring health and mana if it's the dining outfit
-		
-		if pSpecialID == "Dining" then
-			Outfitter_ResumeEvent(OutfitterFrame, "UNIT_HEALTH");
-			Outfitter_ResumeEvent(OutfitterFrame, "UNIT_MANA");
-		end
-		
-		--
-		
-		local	vWearBelowOutfit = nil;
-		
-		-- If it's the ArgentDawn outfit, wear it below the
-		-- riding outfit.  Once the player dismounts then
-		-- overlapping items from the ArgentDawn outfit will equip.
-		-- This will prevent the Argent Dawn trinket from interfering
-		-- with the carrot trinket when riding into the plaguelands
-		
-		if pSpecialID == "ArgentDawn" then
-			vWearBelowOutfit = Outfitter_GetSpecialOutfit("Riding");
-		end
-		
-		--
-		
-		Outfitter_WearOutfit(vOutfit, "Special", vWearBelowOutfit);
-	else
-		Outfitter_RemoveOutfit(vOutfit);
-	end
-end
-
-function Outfitter_WearingSpecialOutfit(pSpecialID)
-	for vIndex, vOutfit in gOutfitter_OutfitStack do
-		if vOutfit.SpecialID == pSpecialID then
-			return true, vIndex;
-		end
-	end
-end
-
-function Outfitter_UpdateZone()
-	local	vCurrentZone = GetZoneText();
-	local	vPVPType, vFactionName, vIsArena = GetZonePVPInfo();
-	
-	if vCurrentZone == gOutfitter_CurrentZone then
-		return;
-	end
-	
-	gOutfitter_CurrentZone = vCurrentZone;
-	
-	local	vZoneSpecialIDMap = Outfitter_cZoneSpecialIDMap[vCurrentZone];
-	local	vSpecialZoneStates = {};
-	
-	if vZoneSpecialIDMap then
-		for _, vZoneSpecialID in vZoneSpecialIDMap do
-			if vZoneSpecialID ~= "City" or vPVPType ~= "hostile" then
-				vSpecialZoneStates[vZoneSpecialID] = true;
-			end
-		end
-	end
-	
-	for _, vSpecialID in Outfitter_cZoneSpecialIDs do
-		local	vIsActive = vSpecialZoneStates[vSpecialID];
-		
-		if vIsActive == nil then
-			vIsActive = false;
-		end
-		
-		local	vCurrentIsActive = gOutfitter_SpecialState[vSpecialID];
-		
-		if vCurrentIsActive == nil then
-			vCurrentIsActive = Outfitter_WearingSpecialOutfit(vSpecialID);
-			gOutfitter_SpecialState[vSpecialID] = vCurrentIsActive;
-		end
-		
-		if vCurrentIsActive ~= vIsActive then
-			gOutfitter_SpecialState[vSpecialID] = vIsActive;
-			Outfitter_SetSpecialOutfitEnabled(vSpecialID, vIsActive);
-		end
-	end
-end
-
-function Outfitter_InBattlegroundZone()
-	local	vZoneSpecialIDMap = Outfitter_cZoneSpecialIDMap[gOutfitter_CurrentZone];
-	
-	return vZoneSpecialIDMap and vZoneSpecialIDMap[1] == "Battleground";
-end
 
 function Outfitter_InInstanceZone()
 	local	vZoneSpecialIDMap = Outfitter_cZoneSpecialIDMap[gOutfitter_CurrentZone];
@@ -4038,6 +3698,23 @@ function Outfitter_DeleteOutfit(pOutfit)
 	
 	--
 	
+	gOutfitter_DisplayIsDirty = true;
+end
+
+function Outfitter_UpdateOutfit(pOutfit)
+
+	local	vOutfitCategoryID, vOutfitIndex = Outfitter_FindOutfit(pOutfit);
+	local name = pOutfit.Name
+
+	if not vOutfitCategoryID then
+		return;
+	end
+
+	local UpdatedpOutfit = Outfitter_GetInventoryOutfit()
+	pOutfit.Items = UpdatedpOutfit.Items
+
+	gOutfitter_Settings.Outfits[vOutfitCategoryID][vOutfitIndex] = pOutfit
+
 	gOutfitter_DisplayIsDirty = true;
 end
 
@@ -4186,8 +3863,6 @@ function Outfitter_Initialize()
 	
 	Outfitter_CheckDatabase();
 	
-	Outfitter_InitializeSpecialOccassionOutfits(); -- Make sure the special occassion outfits are intact
-	                                               -- since the user has no way of creating them himself
 	OutfitterStack_RestoreSavedStack();
 	
 	-- Set the minimap button
@@ -4212,12 +3887,6 @@ function Outfitter_Initialize()
 	
 	gOutfitter_Initialized = true;
 
-	-- Make sure the outfit state is good
-	
-	Outfitter_SetSpecialOutfitEnabled("Riding", false);
-	Outfitter_SetSpecialOutfitEnabled("Spirit", false);
-	Outfitter_UpdateAuraStates();
-	
 	Outfitter_ResumeLoadScreenEvents();
 	
 	Outfitter_DispatchOutfitEvent("OUTFITTER_INIT")
@@ -4259,63 +3928,6 @@ function Outfitter_InitializeOutfits()
 		end
 	end
 	
-	Outfitter_InitializeSpecialOccassionOutfits();
-end
-
-function Outfitter_CreateEmptySpecialOccassionOutfit(pSpecialID, pName)
-	vOutfit = Outfitter_GetSpecialOutfit(pSpecialID);
-	
-	if not vOutfit then
-		vOutfit = Outfitter_NewEmptyOutfit(pName);
-		vOutfit.SpecialID = pSpecialID;
-		
-		Outfitter_AddOutfit(vOutfit);
-	end
-end
-
-function Outfitter_InitializeSpecialOccassionOutfits()
-	local	vEquippableItems = OutfitterItemList_GetEquippableItems(true);
-	local	vOutfit;
-	
-	-- Find an argent dawn trinket and set the argent dawn outfit
-	
-	vOutfit = Outfitter_GetSpecialOutfit("ArgentDawn");
-	
-	if not vOutfit then
-		vOutfit = Outfitter_GenerateSmartOutfit(Outfitter_cArgentDawnOutfit, "ArgentDawn", vEquippableItems, true);
-		vOutfit.SpecialID = "ArgentDawn";
-		Outfitter_AddOutfit(vOutfit);
-	end
-	
-	-- Find riding items
-	
-	vOutfit = Outfitter_GetSpecialOutfit("Riding");
-	
-	if not vOutfit then
-		vOutfit = Outfitter_GenerateSmartOutfit(Outfitter_cRidingOutfit, "Riding", vEquippableItems, true);
-		vOutfit.SpecialID = "Riding";
-		vOutfit.BGDisabled = true;
-		Outfitter_AddOutfit(vOutfit);
-	end
-	
-	-- Create the dining outfit
-	
-	Outfitter_CreateEmptySpecialOccassionOutfit("Dining", Outfitter_cDiningOutfit);
-	
-	-- Create the Battlegrounds outfits
-	
-	Outfitter_CreateEmptySpecialOccassionOutfit("Battleground", Outfitter_cBattlegroundOutfit);
-	Outfitter_CreateEmptySpecialOccassionOutfit("AB", Outfitter_cABOutfit);
-	Outfitter_CreateEmptySpecialOccassionOutfit("AV", Outfitter_cAVOutfit);
-	Outfitter_CreateEmptySpecialOccassionOutfit("WSG", Outfitter_cWSGOutfit);
-	
-	-- Create the city outfit
-	
-	Outfitter_CreateEmptySpecialOccassionOutfit("City", Outfitter_cCityOutfit);
-	
-	-- Create class-specific outfits
-	
-	Outfitter_InitializeClassOutfits();
 end
 
 function Outfitter_InitializeClassOutfits()
@@ -4675,6 +4287,8 @@ function Outfitter_OutfitItemSelected(pMenu, pValue)
 		Outfitter_SetOutfitBindingIndex(vOutfit, tonumber(string.sub(pValue, 8)));
 	elseif pValue == "REBUILD" then
 		Outfitter_AskRebuildOutfit(vOutfit, vCategoryID);
+	elseif pValue == "UPDATE" then
+		Outfitter_AskUpdateOutfit(vOutfit, vCategoryID);
 	elseif pValue == "DEPOSIT" then
 		Outfitter_DepositOutfit(vOutfit);
 	elseif pValue == "DEPOSITUNIQUE" then
@@ -5061,13 +4675,6 @@ function Outfitter_CheckDatabase()
 	-- Version 4 sets the BGDisabled flag for the mounted outfit
 	
 	if gOutfitter_Settings.Version < 4 then
-		local	vRidingOutfit = Outfitter_GetSpecialOutfit("Riding");
-		
-		if vRidingOutfit then
-			vRidingOutfit.BGDisabled = true;
-			vRidingOutfit.InstDisabled = true;
-		end
-		
 		gOutfitter_Settings.Version = 4;
 	end
 	
@@ -5169,7 +4776,7 @@ function Outfitter_HookPaperDollFrame()
 	PaperDollItemSlotButton_OnClick = Outfitter_PaperDollItemSlotButton_OnClick
 end
 
-local	Outfitter_cMaxNumQuickSlots = 9;
+local	Outfitter_cMaxNumQuickSlots = 27;
 local	Outfitter_cSlotIDToInventorySlot = nil;
 
 function Outfitter_PaperDollItemSlotButton_OnClick(pButton, pIgnoreModifiers)
@@ -5898,6 +5505,11 @@ function OutfitterQuickSlots_SetNumSlots(pNumSlots)
 	
 	local	vBaseWidth = 11;
 	local	vSlotWidth = 42;
+
+	OutfitterQuickSlotsBackEnd1:Show();
+	OutfitterQuickSlotsBackEnd2:Show();
+	OutfitterQuickSlotsBackStart1:Show();
+	OutfitterQuickSlotsBackStart2:Show();
 	
 	for vIndex = 1, pNumSlots do
 		local	vSlotItem = getglobal("OutfitterQuickSlotsItem"..vIndex);
@@ -5906,6 +5518,10 @@ function OutfitterQuickSlots_SetNumSlots(pNumSlots)
 		
 		if vIndex == 1 then
 			vSlotItem:SetPoint("TOPLEFT", "OutfitterQuickSlots", "TOPLEFT", 6, -6);
+		elseif vIndex == 10 then
+			vSlotItem:SetPoint("TOPLEFT", "OutfitterQuickSlots", "TOPLEFT", 6, vSlotWidth*-1-12);
+		elseif vIndex == 19 then
+			vSlotItem:SetPoint("TOPLEFT", "OutfitterQuickSlots", "TOPLEFT", 6, -102);
 		else
 			vSlotItem:SetPoint("TOPLEFT", "OutfitterQuickSlotsItem"..(vIndex - 1), "TOPLEFT", vSlotWidth, 0);
 		end
@@ -5916,6 +5532,14 @@ function OutfitterQuickSlots_SetNumSlots(pNumSlots)
 	-- Hide the unused slots
 	
 	for vIndex = pNumSlots + 1, Outfitter_cMaxNumQuickSlots do
+		if vIndex == 10 then
+			OutfitterQuickSlotsBackEnd1:Hide();
+			OutfitterQuickSlotsBackStart1:Hide();
+		end
+		if vIndex == 19 then
+			OutfitterQuickSlotsBackEnd2:Hide();
+			OutfitterQuickSlotsBackStart2:Hide();
+		end
 		local	vSlotItem = getglobal("OutfitterQuickSlotsItem"..vIndex);
 		
 		vSlotItem:Hide();
@@ -5923,7 +5547,9 @@ function OutfitterQuickSlots_SetNumSlots(pNumSlots)
 	
 	-- Size the frame
 	
-	OutfitterQuickSlots:SetWidth(vBaseWidth + vSlotWidth * pNumSlots);
+	local pNumSlotsTemp = pNumSlots
+	if pNumSlots > 9 then pNumSlotsTemp = 9 end
+	OutfitterQuickSlots:SetWidth(vBaseWidth + vSlotWidth * pNumSlotsTemp);
 	
 	-- Fix the background
 	
@@ -5931,12 +5557,36 @@ function OutfitterQuickSlots_SetNumSlots(pNumSlots)
 		for vIndex = 1, pNumSlots - 1 do
 			getglobal("OutfitterQuickSlotsBack"..vIndex):Show();
 		end
-		
-		for vIndex = pNumSlots, Outfitter_cMaxNumQuickSlots - 1 do
+
+		if pNumSlots > 18 then
+			pNumSlotsTemp = pNumSlots-2
+		elseif pNumSlots > 9 then
+			pNumSlotsTemp = pNumSlots-1
+		end
+
+		for vIndex = pNumSlotsTemp, Outfitter_cMaxNumQuickSlots - 1 do
 			getglobal("OutfitterQuickSlotsBack"..vIndex):Hide();
 		end
-		
-		OutfitterQuickSlotsBackEnd:SetPoint("LEFT", "OutfitterQuickSlotsBack"..(pNumSlots - 1), "RIGHT", 0, 0);
+
+		if pNumSlots == 19 then
+			OutfitterQuickSlotsBackEnd2:SetPoint("LEFT", "OutfitterQuickSlotsBackStart2", "RIGHT", 0, 0);
+		else
+			OutfitterQuickSlotsBackEnd2:SetPoint("LEFT", "OutfitterQuickSlotsBack"..(pNumSlotsTemp - 1), "RIGHT", 0, 0);
+		end
+		if pNumSlots == 10 then
+			OutfitterQuickSlotsBackEnd1:SetPoint("LEFT", "OutfitterQuickSlotsBackStart1", "RIGHT", 0, 0);
+		elseif pNumSlots == 1 then
+			OutfitterQuickSlotsBackEnd1:SetPoint("LEFT", "OutfitterQuickSlotsBack16", "RIGHT", 0, 0);
+		elseif pNumSlots < 18 then
+			OutfitterQuickSlotsBackEnd1:SetPoint("LEFT", "OutfitterQuickSlotsBack"..(pNumSlots - 2), "RIGHT", 0, 0);
+		else
+			OutfitterQuickSlotsBackEnd1:SetPoint("LEFT", "OutfitterQuickSlotsBack16", "RIGHT", 0, 0);
+		end
+		if pNumSlots < 9 then
+			OutfitterQuickSlotsBackEnd:SetPoint("LEFT", "OutfitterQuickSlotsBack"..(pNumSlots - 1), "RIGHT", 0, 0);
+		else
+			OutfitterQuickSlotsBackEnd:SetPoint("LEFT", "OutfitterQuickSlotsBack8", "RIGHT", 0, 0);
+		end
 	end
 end
 
