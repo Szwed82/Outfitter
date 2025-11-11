@@ -170,42 +170,18 @@ local Outfitter_cSpecialtyBags =
 
 local Outfitter_cFishingPoles =
 {
-	{Code = 84507, SubCode = 0}, -- Outfitter_cBarkskinFisher
-	{Code = 19970, SubCode = 0}, -- Outfitter_cArcaniteFishingPole
-	{Code = 19022, SubCode = 0}, -- Outfitter_cNatPaglesFishingPole
-	{Code = 12225, SubCode = 0}, -- Outfitter_cBlumpFishingPole
-	{Code = 6367, SubCode = 0}, -- Outfitter_cBigIronFishingPole
-	{Code = 6366, SubCode = 0}, -- Outfitter_cDarkwoodFishingPole
-	{Code = 6365, SubCode = 0}, -- Outfitter_cStrongFishingPole
-	{Code = 6256, SubCode = 0}, -- Outfitter_cFishingPole
 };
 
 local Outfitter_cStatIDItems =
 {
-	Fishing = Outfitter_cFishingPoles,
 };
 
 local Outfitter_cIgnoredUnusedItems = 
 {
-	[2901] = "Mining Pick",
-	[5956] = "Blacksmith hammer",
-	[6219] = "Arclight Spanner",
-	[7005] = "Skinning Knife",
-	[7297] = "Morbent's Bane",
-	[10696] = "Enchanted Azsharite Felbane Sword",
-	[10697] = "Enchanted Azsharite Felbane Dagger",
-	[10698] = "Enchanted Azsharite Felbane Staff",
-	[20406] = "Twilight Cultist Mantle",
-	[20407] = "Twilight Cultist Robe",
-	[20408] = "Twilight Cultist Cowl",
 };
 
 local Outfitter_cSmartOutfits =
 {
-	{Name = Outfitter_cFishingOutfit, StatID = "Fishing", IsAccessory = true},
-	{Name = Outfitter_cHerbalismOutfit, StatID = "Herbalism", IsAccessory = true},
-	{Name = Outfitter_cMiningOutfit, StatID = "Mining", IsAccessory = true},
-	{Name = Outfitter_cSkinningOutfit, StatID = "Skinning", IsAccessory = true},
 	{Name = Outfitter_cFireResistOutfit, StatID = "FireResist"},
 	{Name = Outfitter_cNatureResistOutfit, StatID = "NatureResist"},
 	{Name = Outfitter_cShadowResistOutfit, StatID = "ShadowResist"},
@@ -220,7 +196,6 @@ local Outfitter_cStatCategoryInfo =
 	{Category = "Spell", Name = Outfitter_cSpellsCategory},
 	{Category = "Regen", Name = Outfitter_cRegenCategory},
 	{Category = "Resist", Name = Outfitter_cResistCategory},
-	{Category = "Trade", Name = Outfitter_cTradeCategory},
 };
 
 local Outfitter_cItemStatInfo =
@@ -258,10 +233,6 @@ local Outfitter_cItemStatInfo =
 	{ID = "NatureResist", Name = Outfitter_cNatureResistStatName, Category = "Resist"},
 	{ID = "ShadowResist", Name = Outfitter_cShadowResistStatName, Category = "Resist"},
 	
-	{ID = "Fishing", Name = Outfitter_cFishingStatName, Category = "Trade"},
-	{ID = "Herbalism", Name = Outfitter_cHerbalismStatName, Category = "Trade"},
-	{ID = "Mining", Name = Outfitter_cMiningStatName, Category = "Trade"},
-	{ID = "Skinning", Name = Outfitter_cSkinningStatName, Category = "Trade"},
 };
 
 local Outfitter_cNormalizedClassName =
@@ -3584,14 +3555,6 @@ function Outfitter_GetBuffTooltipText(pBuffIndex)
 	OutfitterTooltip:Hide();
 	
 	return vText1, vText2;
-end
-
-
-
-function Outfitter_InInstanceZone()
-	local	vZoneSpecialIDMap = Outfitter_cZoneSpecialIDMap[gOutfitter_CurrentZone];
-	
-	return vZoneSpecialIDMap and vZoneSpecialIDMap[1] == "Instance";
 end
 
 function Outfitter_SetAllSlotEnables(pEnable)
