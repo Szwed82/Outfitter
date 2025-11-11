@@ -114,8 +114,7 @@ local gOutfitter_cCategoryOrder =
 {
 	"Complete",
 	"Partial",
-	"Accessory",
-	"Special"
+	"Accessory"
 };
 
 local gOutfitter_Collapsed = {};
@@ -178,6 +177,17 @@ local Outfitter_cStatIDItems =
 
 local Outfitter_cIgnoredUnusedItems = 
 {
+	[2901] = "Mining Pick",
+	[5956] = "Blacksmith hammer",
+	[6219] = "Arclight Spanner",
+	[7005] = "Skinning Knife",
+	[7297] = "Morbent's Bane",
+	[10696] = "Enchanted Azsharite Felbane Sword",
+	[10697] = "Enchanted Azsharite Felbane Dagger",
+	[10698] = "Enchanted Azsharite Felbane Staff",
+	[20406] = "Twilight Cultist Mantle",
+	[20407] = "Twilight Cultist Robe",
+	[20408] = "Twilight Cultist Cowl",
 };
 
 local Outfitter_cSmartOutfits =
